@@ -27,7 +27,17 @@ app.get("/count", function(req, res){
 app.get("/add1", function(req, res){
     req.session.count += 1
     res.redirect("/count")
-})
+});
+
+app.get("/add2", function(req, res){
+    req.session.count += 2
+    res.redirect("/count")
+});
+
+app.get("/reset", function(req, res){
+    req.session.count = 0 
+    res.redirect("/count")
+});
 
 app.listen(port, function(){
     console.log("listening");
